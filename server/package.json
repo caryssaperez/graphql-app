@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "cd client && npm run start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,7 @@
   },
   "homepage": "https://github.com/caryssaperez/graphql-app#readme",
   "dependencies": {
+    "concurrently": "^3.5.1",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
